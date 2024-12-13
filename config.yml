@@ -1,0 +1,86 @@
+title: Official demo page for the paper "A lightweight and robust method for wideband-to-fullband extension of speech"
+description: This demo page highlights applications of the proposed bandwidth extension method both in the coding and vocoding context. The demo samples were extracted from the <a href="https://github.com/facebookresearch/ears_dataset">EARS dataset</a> which is licensed under the <a href="https://github.com/facebookresearch/ears_dataset/blob/main/LICENSE">CC-NC 4.0 International license</a>. It is recommended to listen with reasonably good headphones.
+sections:
+
+  - title: Coded Speech at 12kb/s
+    base: items
+    items:
+      p018_f_15.wav: f1
+      p041_f_23.wav: f2
+      p050_f_22.wav: f3
+      p009_m_16.wav: m1
+      p071_m_01.wav: m2
+      p031_m_17.wav: m3
+    conditions:
+      orig48: Reference
+      opus_wb_12000_dc10: Opus 1.5
+      opus_nbwe_12000_dc10: Opus 1.5 + BWE
+      encodec_12000: EnCodec
+      audiodec_12800: AudioDec @ 12.8 kb/s
+      opus_fb_18000_dc0: Opus 1.4 @ 18 kb/s
+
+  - title: Coded Speech at 9kb/s
+    base: items
+    items:
+      p018_f_15.wav: f1
+      p041_f_23.wav: f2
+      p050_f_22.wav: f3
+      p009_m_16.wav: m1
+      p071_m_01.wav: m2
+      p031_m_17.wav: m3
+    conditions:
+      orig48: Reference
+      opus_wb_9000_dc10: Opus 1.5
+      opus_nbwe_9000_dc10: Opus 1.5 + BWE
+      evs_fb_9600: EVS @ 9.6kb/s
+
+  - title: Coded Speech at 6kb/s
+    base: items
+    items:
+      p018_f_15.wav: f1
+      p041_f_23.wav: f2
+      p050_f_22.wav: f3
+      p009_m_16.wav: m1
+      p071_m_01.wav: m2
+      p031_m_17.wav: m3
+    conditions:
+      orig48: Reference
+      opus_wb_6000_dc10: Opus 1.5
+      opus_nbwe_6000_dc10: Opus 1.5 + BWE
+      encodec_6000: EnCodec
+
+  - title: Uncoded Speech
+    base: items
+    items:
+      p018_f_15.wav: f1
+      p041_f_23.wav: f2
+      p050_f_22.wav: f3
+      p009_m_16.wav: m1
+      p071_m_01.wav: m2
+      p031_m_17.wav: m3
+    conditions:
+      orig48: Reference
+      orig_wb: 8kHz lowpass
+      orig16_nbwe: 8kHz lowpass + BWE
+  
+  - title: Low-complexity vocoders
+    base: items
+    items:
+      p018_f_15.wav: f1
+      p041_f_23.wav: f2
+      p050_f_22.wav: f3
+      p009_m_16.wav: m1
+      p071_m_01.wav: m2
+      p031_m_17.wav: m3
+    conditions:
+      orig48: Reference
+      lpcnet: LPCNet
+      lpcnet_nbwe: LPCNet + BWE
+      fargan: FARGAN
+      fargan_nbwe: FARGAN + BWE
+
+
+
+
+
+
