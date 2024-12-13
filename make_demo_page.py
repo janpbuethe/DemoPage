@@ -39,6 +39,13 @@ def write_header(f, title, intro=None):
             font-size: 1.2em;
             padding: 7px 7px;
         }}
+        .section {{
+            overflow-x: scroll;
+        }}
+        body {{
+            margin: 0px auto;
+            max-width: 60rem;
+        }}
     </style>
 </head>
 <body>
@@ -60,7 +67,7 @@ def write_footer(f):
 </article>
 </body>
 </html>
-            """)
+""")
 
 
 
@@ -77,7 +84,7 @@ def write_section(f, section):
     base = section['base']
     conditions = list(section['conditions'].keys())
 
-    f.write("<div>")
+    f.write("<div class=\"section\">\n")
     f.write(f"\t<h2>{section['title']}</h2>\n")
     f.write("\t<table>\n")
 
@@ -87,8 +94,8 @@ def write_section(f, section):
             f, 2, [name] + [f'<audio controls> <source src="{os.path.join(base, cond, item)}"> </audio>' for cond in conditions] 
         )
 
-    f.write("\t</table>\n\n")
-    f.write("</div>")
+    f.write("\t</table>\n")
+    f.write("</div>\n")
 
 
 if __name__ == "__main__":
