@@ -39,13 +39,13 @@ def write_header(f, title, intro=None):
             font-size: 1.2em;
             padding: 7px 7px;
         }}
-		.section {{
-			overflow-x: scroll;
-		}}
-		body {{
-			margin: 0px auto;
-			max-width: 60rem;
-		}}
+        .section {{
+            overflow-x: scroll;
+        }}
+        body {{
+            margin: 0px auto;
+            max-width: 60rem;
+        }}
     </style>
 </head>
 <body>
